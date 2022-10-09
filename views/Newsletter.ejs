@@ -1,0 +1,26 @@
+<%- include ("partials/header.ejs") %>
+<link href="/css/newsletter-style.css" rel="stylesheet" type="text/css">
+
+<form action="/Newsletter">
+  <div class="container">
+    <h2>Subscribe to our Newsletter</h2>
+    <p>Subscribe to our newsletter for updates about our pets!</p>
+  </div>
+
+  <div class="container" style="background-color:white">
+    <input type="text" placeholder="Name" name="name" required>
+    <input type="text" placeholder="Email address" name="mail" required>
+  </div>
+
+  <div class="container">
+    <input type="submit" name="formSubmitted"
+    value="Subscribe">
+  </div>
+</form>
+
+<% if ( emailAdded )  { %>  
+        
+            <h3> Subscribed to newsletter! </h3>
+        
+          <%    }  %>
+<%- include("partials/footer.ejs") %>

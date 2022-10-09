@@ -1,0 +1,49 @@
+<%- include ("partials/header.ejs") %>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
+<body class="text-center">
+<h1 class="jumbotron" class="titleH1">Admin Section</h1>
+  <div class="card">
+    <div class="card-body">
+  <h2> Update and Delete Pets </h2>
+
+  <%  rows.forEach( function(rows){  %> 
+  
+
+       [<a href="/UpdatePets?petId=<%=rows.petId%>"> Update </a>]
+       [ <a class="DeletePets" href="#" id="<%=rows.petId%>"> Delete </a>]
+
+      <span>
+       <%=rows.name%>
+      </span>
+       <br>
+   <% }) %>
+  </div>
+</div>
+
+ <script>
+
+      $(".DeletePets").on("click",confirmDeleteAuthor);
+
+      function confirmDeleteAuthor(){
+ 
+        let deletePet = confirm("Delete pet " + $(this).next().html() + "?");
+
+        if (deletePet) {
+ 
+           let petId = $(this).attr("id");
+
+            window.location.href = "/DeletePets?petId="+petId;
+
+            //alert("deleting record...");
+         
+        }
+
+      }
+
+
+ </script>
+
+
+</body>
+</html>

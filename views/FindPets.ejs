@@ -1,0 +1,31 @@
+<center><h1 class="titleH1">Find Pets</h1></center>
+<%- include("partials/header.ejs") %>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
+<center>
+  <div class="card">
+    <div class="card-body">
+      <form action="/search">
+        Name:
+        <input type="text" name="keyword">
+
+        <select name="species">
+          <option value = "">All Species</option>
+          <option value = "cat">Cats</option>
+          <option value = "dog">Dogs</option>
+        </select>
+
+        <div class="petSex">
+          Sex:
+          <input type="radio" name="pS" id="all" value="" <label for="all"> All </label>
+          <input type="radio" name="pS" id="f" value="F" <label for="f"> Female </label>
+          <input type="radio" name="pS" id="m" value="M" <label for="m"> Male </label>
+          
+        </div>
+
+        <button>Search For Pets!</button> <!-- Test -->
+      </form>
+    </div>
+  </div>
+</center>
+<%- include("partials/footer.ejs") %>

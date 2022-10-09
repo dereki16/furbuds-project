@@ -1,0 +1,38 @@
+<%- include ("partials/header.ejs") %>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
+<body class="text-center">
+<h1 class="jumbotron" class="titleH1">Admin Section</h1>
+  <div class="card">
+    <div class="card-body">
+      <h2> Adding a new pet </h2>
+      
+      <form action="/AddPet">
+
+        First name: 
+        <input type="text" name="firstName"><br>
+      
+        Species: 
+        <input type="text" name="species"><br>
+
+        Photo: 
+        <input type="text" name="photo"><br>
+
+        Sex (M or F): 
+        <input type="text" name="sex"><br>
+
+
+        <button name="formSubmitted" class="btn btn-primary">Add a new Pet</button>
+      </form>
+
+        <% if ( petAdded )  { %>  
+        
+            <h3> Pet added! </h3>
+        
+          <%    }  %>
+        </div>
+      </div>
+      
+
+</body>
+</html>

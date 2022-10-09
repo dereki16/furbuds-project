@@ -1,0 +1,20 @@
+<%- include ("partials/header.ejs") %>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+  <div class="card">
+    <div class="card-body pets-found">
+      <% rows.forEach( function(row) {  %>
+      <figure>
+        <img src="<%=row.photo%>">
+        <figcaption>
+          <a href ="#" id = "<%=row.petId%>"><%= row.name%> <%= row.species%></a>
+      
+          <!--This badge can be connected to database and used display the availability of a pet. You can use it if you want.-->
+          <span class="badge badge-secondary">New</span><br><br>
+        </figcaption>
+        </figure>
+        
+
+      <% }) %>
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>

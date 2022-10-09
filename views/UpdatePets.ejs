@@ -1,0 +1,45 @@
+<%- include ("partials/header.ejs") %>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<body class="text-center">
+<h1 class="jumbotron">Admin Section</h1>
+  <div class="card">
+    <div class="card-body">
+  <h2> Updating pet info </h2>
+  
+  <form action="/UpdatePets">
+
+    First name:
+    <input type="text" name="firstName" value="<%= rows[0].name %>"><br>
+  
+    Species:
+    <input type="text" name="species"
+     value="<%= rows[0].species %>"><br>
+
+    Photo:
+    <input type="text" name="photo"
+     value="<%= rows[0].photo %>"><br>
+
+    Sex: 
+    <input type="radio" name="sex" value=
+    "F"  <%=(rows[0].sex == 'F')?"checked":""  %>    > Female
+
+    <input type="radio" name="sex" value=
+    "M" 
+     
+    <% if (rows[0].sex == 'M')  { %>
+
+        checked
+
+    <% } %>
+    
+     > Male
+
+
+     <input type="hidden" name="petId" value="<%=rows[0].petId%>">
+    <button class="btn btn-primary">Update Pet</button>
+  </form>
+  </div>
+</div>
+
+</body>
+</html>
